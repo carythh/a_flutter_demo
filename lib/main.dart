@@ -1,12 +1,24 @@
+import 'package:a_flutter_demo/res/log_utils.dart';
+import 'package:a_flutter_demo/util/handleError.dart';
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
+import 'package:flutter/services.dart';
+// void main() {
+//   runApp(const MyApp());
+// }
+Future<void> main() async {
+  /// 异常处理
+  handleError(() => runApp(MyApp()));
+  /// 隐藏状态栏。为启动页、引导页设置。完成后修改回显示状态栏。
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom]);
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key, this.home, this.theme}) {
+    Log.init();
+  }
 
+  final Widget? home;
+  final ThemeData? theme;
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -58,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+      Log.e("计数：$_counter");
     });
   }
 
