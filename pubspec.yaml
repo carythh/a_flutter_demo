@@ -40,6 +40,8 @@ dependencies:
   diox: ^5.0.0
   #sp工具类
   sp_util: 2.0.3
+  # 获取当前设备信息 https://github.com/fluttercommunity/plus_plugins/tree/main/packages/device_info_plus
+  device_info_plus: 8.0.0
 
 dev_dependencies:
   flutter_test:
