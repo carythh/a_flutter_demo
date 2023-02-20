@@ -38,7 +38,8 @@ dependencies:
   common_utils: 2.1.0
   # 网络库 https://github.com/cfug/diox
   diox: ^5.0.0
-
+  #sp工具类
+  sp_util: 2.0.3
 
 dev_dependencies:
   flutter_test:
