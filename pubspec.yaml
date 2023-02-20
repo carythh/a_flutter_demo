@@ -36,7 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   # Dart 常用工具类库 https://github.com/Sky24n/common_utils
   common_utils: 2.1.0
-
+  # 网络库 https://github.com/cfug/diox
+  diox: ^5.0.0
 
 
 dev_dependencies:
