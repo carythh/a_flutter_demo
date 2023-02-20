@@ -42,6 +42,8 @@ dependencies:
   sp_util: 2.0.3
   # 获取当前设备信息 https://github.com/fluttercommunity/plus_plugins/tree/main/packages/device_info_plus
   device_info_plus: 8.0.0
+  # 格式化String https://github.com/Naddiseo/dart-sprintf
+  sprintf: ^7.0.0
 
 dev_dependencies:
   flutter_test:
