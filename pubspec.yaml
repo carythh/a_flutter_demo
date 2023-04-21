@@ -35,6 +35,27 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   # Dart 常用工具类库 https://github.com/Sky24n/common_utils
+#  Dart常用工具类库 common_utils
+#  TimelineUtil: 时间轴.
+#  TimerUtil: 倒计时，定时任务.
+#  MoneyUtil: 精确转换，元转分，分转元，支持格式输出.
+#  LogUtil: 简单封装打印日志.
+#  DateUtil: 日期转换格式化输出.
+#  RegexUtil: 正则验证手机号，身份证，邮箱等等.
+#  NumUtil: 保留x位小数, 精确加、减、乘、除, 防止精度丢失.
+#  ObjectUtil: 判断对象是否为空(String List Map),判断两个List是否相等.
+#  EncryptUtil: 异或对称加/解密，md5加密，Base64加/解密.
+#  TextUtil: 银行卡号每隔4位加空格，每隔3三位加逗号，隐藏手机号等等.
+#  JsonUtil: 简单封装json字符串转对象.
+#  Flutter常用工具类库 flustars
+#
+#  SpUtil: 单例"同步"SharedPreferences工具类。支持get传入默认值，支持存储对象，支持存储对象数组。
+#  ScreenUtil: 屏幕适配，获取屏幕宽、高、密度，AppBar高，状态栏高度，屏幕方向.
+#  WidgetUtil: 监听Widget渲染状态，获取Widget宽高，在屏幕上的坐标，获取网络/本地图片尺寸.
+#  ImageUtil: 获取网络/本地图片尺寸.
+#  DirectoryUtil: 文件目录工具类.
+#  DioUtil: 单例Dio网络工具类(已迁移至此处DioUtil)。
+
   common_utils: 2.1.0
   # 网络库 https://github.com/cfug/diox
   diox: ^5.0.0
@@ -48,6 +69,17 @@ dependencies:
   oktoast: ^3.3.1
   # 状态管理 https://github.com/rrousselGit/provider
   provider: ^6.0.5
+  # 图片缓存 https://github.com/renefloor/flutter_cached_network_image
+  cached_network_image: ^3.2.3
+  # 路由框架 https://github.com/theyakka/fluro
+  fluro: ^2.0.4
+  # Flutter 轮播图 https://github.com/mdddj/flutter_swiper_null_safety
+  flutter_swiper_null_safety_flutter3: ^3.0.0   # flutter_swiper很久不维护，可以使用这个替代
+  # WebView插件 https://github.com/flutter/plugins/tree/master/packages/webview_flutter
+  webview_flutter: 4.0.2
+
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -74,6 +106,9 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
