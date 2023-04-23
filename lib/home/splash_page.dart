@@ -21,7 +21,9 @@ import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_f
 import 'package:rxdart/rxdart.dart';
 import 'package:sp_util/sp_util.dart';
 
+import '../login/login_router.dart';
 import '../res/constant.dart';
+import '../routers/fluro_navigator.dart';
 import '../util/device_utils.dart';
 import '../util/image_utils.dart';
 import '../widgets/fractionally_aligned_sized_box.dart';
@@ -85,17 +87,17 @@ class _SplashPageState extends State<SplashPage> {
 
   void _initSplash() {
     _subscription = Stream.value(1).delay(const Duration(milliseconds: 1500)).listen((_) {
-      if (SpUtil.getBool(Constant.keyGuide, defValue: true)! || Constant.isDriverTest) {
-        SpUtil.putBool(Constant.keyGuide, false);
-        _initGuide();
-      } else {
+      // if (SpUtil.getBool(Constant.keyGuide, defValue: true)! || Constant.isDriverTest) {
+      //   SpUtil.putBool(Constant.keyGuide, false);
+      //   _initGuide();
+      // } else {
         _goLogin();
-      }
+      // }
     });
   }
 
   void _goLogin() {
-    //NavigatorUtils.push(context, LoginRouter.loginPage, replace: true);
+    NavigatorUtils.push(context, LoginRouter.loginPage, replace: true);
   }
 
   @override

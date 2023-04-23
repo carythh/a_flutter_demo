@@ -29,6 +29,7 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   MyApp({super.key, this.home, this.theme}) {
     Log.init();
+    Routes.initRoutes();
     initDio();
   }
 
