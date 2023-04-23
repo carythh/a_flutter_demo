@@ -77,8 +77,10 @@ dependencies:
   flutter_swiper_null_safety_flutter3: ^3.0.0   # flutter_swiper很久不维护，可以使用这个替代
   # WebView插件 https://github.com/flutter/plugins/tree/master/packages/webview_flutter
   webview_flutter: 4.0.2
-
-
+  # 处理键盘事件 https://github.com/diegoveloper/flutter_keyboard_actions
+  keyboard_actions: ^4.1.0
+  # 启动URL的插件（支持Web） https://github.com/flutter/plugins/tree/master/packages/url_launcher
+  url_launcher: 6.1.8
 
 dev_dependencies:
   flutter_test:
@@ -108,6 +110,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/
+    - - assets/images/login/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
