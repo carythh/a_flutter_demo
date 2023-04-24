@@ -110,7 +110,7 @@ class _SplashPageState extends State<SplashPage> {
         widthFactor: 0.33,
         leftFactor: 0.33,
         bottomFactor: 0,
-        child: LoadAssetImage('img_cone')
+        child: LoadAssetImage('app_icon')
       ) :
       Swiper(
         key: const Key('swiper'),
