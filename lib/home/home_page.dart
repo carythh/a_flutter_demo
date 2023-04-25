@@ -15,6 +15,7 @@ import 'package:provider/provider.dart';
 import '../res/colors.dart';
 import '../res/dimens.dart';
 import '../widgets/double_tap_back_exit_app.dart';
+import '../widgets/load_image.dart';
 
 class Home extends StatefulWidget {
 
@@ -26,10 +27,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> with RestorationMixin{
 
-  static const double _imageSize = 25.0;
+  static const double _imageSize = 22.0;
 
   late List<Widget> _pageList;
-  final List<String> _appBarTitles = ['订单', '商品', '统计', '店铺'];
+  final List<String> _appBarTitles = ['首页', '计划', '发现', '我的'];
   final PageController _pageController = PageController();
 
   HomeProvider provider = HomeProvider();
@@ -61,22 +62,22 @@ class _HomeState extends State<Home> with RestorationMixin{
   List<BottomNavigationBarItem> _buildBottomNavigationBarItem() {
     if (_list == null) {
       const tabImages = [
-        // [
-        //   LoadAssetImage('home/icon_order', width: _imageSize, color: Colours.unselected_item_color,),
-        //   LoadAssetImage('home/icon_order', width: _imageSize, color: Colours.app_main,),
-        // ],
-        // [
-        //   LoadAssetImage('home/icon_commodity', width: _imageSize, color: Colours.unselected_item_color,),
-        //   LoadAssetImage('home/icon_commodity', width: _imageSize, color: Colours.app_main,),
-        // ],
-        // [
-        //   LoadAssetImage('home/icon_statistics', width: _imageSize, color: Colours.unselected_item_color,),
-        //   LoadAssetImage('home/icon_statistics', width: _imageSize, color: Colours.app_main,),
-        // ],
-        // [
-        //   LoadAssetImage('home/icon_shop', width: _imageSize, color: Colours.unselected_item_color,),
-        //   LoadAssetImage('home/icon_shop', width: _imageSize, color: Colours.app_main,),
-        // ]
+        [
+          LoadAssetImage('home/icon_home_n', width: _imageSize, color: Colours.color_878787,),
+          LoadAssetImage('home/icon_home_n', width: _imageSize, color: Colours.color_FE7530,),
+        ],
+        [
+          LoadAssetImage('home/icon_detail_n', width: _imageSize, color: Colours.color_878787,),
+          LoadAssetImage('home/icon_detail_n', width: _imageSize, color: Colours.color_FE7530,),
+        ],
+        [
+          LoadAssetImage('home/icon_eye_n', width: _imageSize, color: Colours.color_878787,),
+          LoadAssetImage('home/icon_eye_n', width: _imageSize, color: Colours.color_FE7530,),
+        ],
+        [
+          LoadAssetImage('home/icon_account_n', width: _imageSize, color: Colours.color_878787,),
+          LoadAssetImage('home/icon_account_n', width: _imageSize, color: Colours.color_FE7530,),
+        ]
       ];
       _list = List.generate(tabImages.length, (i) {
         return BottomNavigationBarItem(
@@ -93,22 +94,22 @@ class _HomeState extends State<Home> with RestorationMixin{
   List<BottomNavigationBarItem> _buildDarkBottomNavigationBarItem() {
     if (_listDark == null) {
       const tabImagesDark = [
-        // [
-        //   LoadAssetImage('home/icon_order', width: _imageSize),
-        //   LoadAssetImage('home/icon_order', width: _imageSize, color: Colours.dark_app_main,),
-        // ],
-        // [
-        //   LoadAssetImage('home/icon_commodity', width: _imageSize),
-        //   LoadAssetImage('home/icon_commodity', width: _imageSize, color: Colours.dark_app_main,),
-        // ],
-        // [
-        //   LoadAssetImage('home/icon_statistics', width: _imageSize),
-        //   LoadAssetImage('home/icon_statistics', width: _imageSize, color: Colours.dark_app_main,),
-        // ],
-        // [
-        //   LoadAssetImage('home/icon_shop', width: _imageSize),
-        //   LoadAssetImage('home/icon_shop', width: _imageSize, color: Colours.dark_app_main,),
-        // ]
+        [
+          LoadAssetImage('home/icon_home_n', width: _imageSize),
+          LoadAssetImage('home/icon_home_n', width: _imageSize, color: Colours.color_FE7530,),
+        ],
+        [
+          LoadAssetImage('home/icon_detail_n', width: _imageSize),
+          LoadAssetImage('home/icon_detail_n', width: _imageSize, color: Colours.color_FE7530,),
+        ],
+        [
+          LoadAssetImage('home/icon_eye_n', width: _imageSize),
+          LoadAssetImage('home/icon_eye_n', width: _imageSize, color: Colours.color_FE7530,),
+        ],
+        [
+          LoadAssetImage('home/icon_account_n', width: _imageSize),
+          LoadAssetImage('home/icon_account_n', width: _imageSize, color: Colours.color_FE7530,),
+        ]
       ];
 
       _listDark = List.generate(tabImagesDark.length, (i) {
@@ -141,8 +142,8 @@ class _HomeState extends State<Home> with RestorationMixin{
                 iconSize: 21.0,
                 selectedFontSize: Dimens.font_sp10,
                 unselectedFontSize: Dimens.font_sp10,
-                selectedItemColor: Theme.of(context).primaryColor,
-                unselectedItemColor: isDark ? Colours.dark_unselected_item_color : Colours.unselected_item_color,
+                selectedItemColor: Colours.color_FE7530,
+                unselectedItemColor: isDark ? Colours.dark_unselected_item_color : Colours.color_878787,
                 onTap: (index) => _pageController.jumpToPage(index),
               );
             },
