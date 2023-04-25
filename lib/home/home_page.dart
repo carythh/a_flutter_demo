@@ -12,8 +12,12 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_deer/widgets/load_image.dart';
 import 'package:provider/provider.dart';
 
+import '../discoveries/page/home_discoveries.dart';
+import '../mine/page/home_mine.dart';
+import '../plan/page/home_plan.dart';
 import '../res/colors.dart';
 import '../res/dimens.dart';
+import '../sports/page/home_sports.dart';
 import '../widgets/double_tap_back_exit_app.dart';
 import '../widgets/load_image.dart';
 
@@ -52,10 +56,10 @@ class _HomeState extends State<Home> with RestorationMixin{
 
   void initData() {
     _pageList = [
-      // const OrderPage(),
-      // const GoodsPage(),
-      // const StatisticsPage(),
-      // const ShopPage(),
+      const HomeSportsPage(),
+      const HomePlanPage(),
+      const HomeDiscoveriesPage(),
+      const HomeMinePage(),
     ];
   }
 
