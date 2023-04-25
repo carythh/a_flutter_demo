@@ -6,6 +6,8 @@ import '../../res/colors.dart';
 import '../../res/constant.dart';
 import '../../res/dimens.dart';
 import '../../res/gaps.dart';
+import '../../routers/fluro_navigator.dart';
+import '../../routers/routers.dart';
 import '../../util/change_notifier_manage.dart';
 import '../../util/other_utils.dart';
 import '../../util/toast_utils.dart';
@@ -146,12 +148,12 @@ class _LoginPageState extends State<LoginPage>
   void _login() {
     Toast.show("登录");
     // SpUtil.putString(Constant.phone, _nameController.text);
-    // NavigatorUtils.push(context, StoreRouter.auditPage);
+    NavigatorUtils.push(context, Routes.home, clearStack: true);
   }
 
   void _loginByVisitor() {
     Toast.show("游客登录");
     // SpUtil.putString(Constant.phone, _nameController.text);
-    // NavigatorUtils.push(context, StoreRouter.auditPage);
+    NavigatorUtils.push(context, Routes.home, clearStack: true);
   }
 }
