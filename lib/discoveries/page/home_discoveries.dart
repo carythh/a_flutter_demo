@@ -1,3 +1,4 @@
+import 'package:a_flutter_demo/res/resources.dart';
 import 'package:flutter/material.dart';
 
 class HomeDiscoveriesPage extends StatefulWidget {
@@ -12,29 +13,57 @@ class _HomeDiscoveriesPageState extends State<HomeDiscoveriesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Provider Class'),
+        title:  const Text('发现',style: TextStyle(color: Colours.color_323232) ,),
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView(
-              children: const [
-                ListTile(
-                  title: Text('Group 1 Title  Discoveries'),
-                  subtitle: Text('Group 1 Subtitle  Discoveries'),
-                ),
-                ListTile(
-                  title: Text('Group 2 Title  Discoveries'),
-                  subtitle: Text('Group 2 Subtitle  Discoveries'),
-                ),
-                ListTile(
-                  title: Text('Group 3 Title  Discoveries'),
-                  subtitle: Text('Group 3 Subtitle Discoveries'),
-                ),
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 200,
+              child: PageView(
+                children: [
+                  Image.network(
+                      'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
+                      fit: BoxFit.cover),
+                  Image.network(
+                      'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
+                      fit: BoxFit.cover),
+                  Image.network(
+                      'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
+                      fit: BoxFit.cover),
+                ],
+              ),
             ),
-          ),
-        ],
+            GridView.count(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              crossAxisCount: 5,
+              children: List.generate(10, (index) {
+                return Container(
+                  margin: const EdgeInsets.all(10),
+                  color: Colors.grey[300],
+                  child: Center(
+                    child: Text(
+                      'Grid Item $index',
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
+                  ),
+                );
+              }),
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: 10,
+              itemBuilder: (BuildContext context, int index) {
+                return ListTile(
+                  title: Text('Group $index'),
+                  subtitle: Text('Description of group $index'),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
