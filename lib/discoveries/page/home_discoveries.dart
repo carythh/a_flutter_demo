@@ -1,4 +1,5 @@
 import 'package:a_flutter_demo/res/resources.dart';
+import 'package:a_flutter_demo/util/toast_utils.dart';
 import 'package:flutter/material.dart';
 
 class HomeDiscoveriesPage extends StatefulWidget {
@@ -13,7 +14,10 @@ class _HomeDiscoveriesPageState extends State<HomeDiscoveriesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  const Text('发现',style: TextStyle(color: Colours.color_323232) ,),
+        title: const Text(
+          '发现',
+          style: TextStyle(color: Colours.color_323232),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -39,16 +43,18 @@ class _HomeDiscoveriesPageState extends State<HomeDiscoveriesPage> {
               physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 5,
               children: List.generate(10, (index) {
-                return Container(
-                  margin: const EdgeInsets.all(10),
-                  color: Colors.grey[300],
-                  child: Center(
-                    child: Text(
-                      'Grid Item $index',
-                      style: Theme.of(context).textTheme.titleSmall,
-                    ),
-                  ),
-                );
+                return GestureDetector(
+                    onTap: () {
+                      // Handle tap event here
+                      Toast.show("点击了第$index 个");
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.all(10),
+                      color: Colors.grey[300],
+                      child: Image.network(
+                          'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
+                          fit: BoxFit.cover),
+                    ));
               }),
             ),
             ListView.builder(
