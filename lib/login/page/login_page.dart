@@ -146,13 +146,13 @@ class _LoginPageState extends State<LoginPage>
   }
 
   void _login() {
-    Toast.show("登录");
+    Toast.show("登录成功");
     // SpUtil.putString(Constant.phone, _nameController.text);
     NavigatorUtils.push(context, Routes.home, clearStack: true);
   }
 
   void _loginByVisitor() {
-    Toast.show("游客登录");
+    Toast.show("游客模式");
     // SpUtil.putString(Constant.phone, _nameController.text);
     NavigatorUtils.push(context, Routes.home, clearStack: true);
   }
